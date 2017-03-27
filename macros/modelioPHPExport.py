@@ -48,12 +48,17 @@ def printClassRealizations(clazz, indent):
     ret = ""
     extends = ""
     implements = ""
+    
     for realization in clazz.getRealized():
         isInterface = realization.getMClass().getName() == "InterfaceRealization"
         if (isInterface):
             implements += ", " + realization.getImplemented().getName()
+    for parent in clazz.getParent():
+        isGeneralization = parent.getMClass().getName() == "Generalization"
+        if (isGeneralization):
+            extends += ", " + parent.getSuperType().getName()
     if (len(extends) > 0):
-        ret += indentPrint(" extends "+ extends, indent)
+        ret += indentPrint(" extends "+ extends.strip(" ,"), indent)
     if (len(implements) > 0):
         ret += indentPrint(" implements " + implements.strip(" ,"), indent)
     return ret
