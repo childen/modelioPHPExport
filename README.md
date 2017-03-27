@@ -9,3 +9,5 @@ The namespace is derived from the name of the parent package of the class/interf
 
 The output folder has to be specified within the macro code. The folder has to exists.
 
+# Setup
+https://forge.modelio.org/projects/modelio3-usermanual-english-310/wiki/Modeler-_modeler_modelio_settings_macros_catalog
